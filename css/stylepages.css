@@ -1,0 +1,89 @@
+/**DETAILS CSS PAGES/*/
+
+.center{text-align:center;}
+
+/********************************/
+/********MAIN INDEX DOWNLOAD/********/
+/********************************/
+
+#download a:visited, #download a:link{color:#9b6c3b;}
+#download .introduction{text-align:center; line-height:2.4rem;}
+#download section.install{display:flex; justify-content:space-between; text-align:center; margin-bottom:40px;}
+#download section.chipset{display:flex; justify-content:center; text-align:center; }
+#download section.install article{width:30%;}
+#download section.install article a, #download section.chipset article a, #download .editor a, #download p.wiki a,
+#download .testso a{color:#9b6c3b; font-weight:bold; text-decoration:underline;}
+
+#download section.install article p{margin:0; line-height:2.5rem;}
+#download section.pack article{padding: 0 10px;}
+#download section.pack p:last-child{line-height:2.8rem; margin-bottom:40px;}
+
+#download section.editorgame p:last-child{line-height:1rem; margin-bottom:40px;}
+
+#download section.install figure {margin: 0;}
+#download .editor{text-align:center; margin:auto;}
+#download .skintest{text-align:center;}
+#download .listinterface{display:flex; justify-content:space-around; text-decoration:underline; color:#9b6c3b; font-weight:bold;}
+#download .floweryellow{margin-top:40px;}
+
+/*********************************************/
+/*****************SCREEN************************/
+/***********************************************/
+
+#screen .gallery img{width:400px; height:320px; margin-bottom:15px;}
+#screen article{display:flex; flex-wrap:wrap; justify-content:space-between;}
+#screen h4{text-align:center; text-decoration:underline;}
+#screen a:visited, #download a:link{color:#9b6c3b;}
+#screen a{color:#9b6c3b;}
+
+/*********************************************/
+/*****************INTERFACES************************/
+/***********************************************/
+
+body {background-image: url("../images/crossword.png");}
+#interfaces a{color:#9b6c3b;}
+#interfaces a:visited, #download a:link{color:#9b6c3b;}
+#interfaces{text-align:center; margin:auto; font-family: 'Open Sans', sans-serif;}
+#interfaces img{width:100%;}
+#interfaces h5{margin-top:10px;}
+
+/*********************************************/
+/*****************UNIVERS************************/
+/***********************************************/
+#univers a{color:#9b6c3b;}
+#univers a:visited, #univers a:link{color:#9b6c3b;}
+#univers{text-align:center; margin: 45px auto;}
+#univers figure img{width:70%;}
+#univers .personnage{display:flex; flex-wrap:wrap; justify-content:space-between;}
+#univers figure{width:48%; display:inline-block; margin:0;}
+#univers p.intro{font-style:italic; width:70%; margin:auto; line-height: 3rem; margin:55px auto;}
+#univers nav{float:none; color:#9b6c3b; font-weight:bold; font-size:2rem;}
+#univers nav>ul{display:flex; justify-content:space-between; list-style:none; padding:0; margin:0;}
+#univers section#world img{width:30%;}
+#univers #rp{text-align: left;}
+#univers h3{font-size:2rem; margin-top:45px;}
+#univers .defrp{text-align:center; width: 80%; margin:auto;}
+#univers section{line-height:2.5rem;}
+#univers h4{text-indent:45px;}
+#univers section a{text-decoration:underline; font-weight:bold; text-align:center; display:block;}
+#univers ul{margin-left:125px;}
+
+/*********************************************/
+/*****************GUIDE PRATIQUE************************/
+/***********************************************/
+
+#guidepratique{line-height:2.5rem; margin:55px auto;}
+#guidepratique img{margin:auto; text-align:center; display:block;}
+#guidepratique .intro{width:85%; margin:auto;}
+#guidepratique a{color:#9b6c3b;}
+#guidepratique a:visited, #guidepratique a:link{color:#9b6c3b;}
+#guidepratique .block{display: block;}
+#guidepratique nav{float:none; color:#9b6c3b; font-weight:bold; font-size:2rem; margin-top:60px;}
+#guidepratique nav>ul{display:flex; justify-content:space-between; list-style:none; padding:0;}
+#guidepratique section .vMobile{display:none;}
+
+
+/*********************************************/
+/*****************GUIDE PRATIQUE************************/
+/***********************************************/
+#guideskin{line-height:3.8rem;}

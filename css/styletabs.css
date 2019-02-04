@@ -1,0 +1,32 @@
+/*CSS TABS PAGE SUCCES*/
+
+html{overflow-y: scroll;}
+
+#succes table{
+	border-collapse: collapse;
+	margin:0 30px;
+}
+
+#succes td{margin:5px 10px;}
+
+#succes td, succes th /* Mettre une bordure sur les td ET les th */{
+    border-top: 1px solid black;
+	padding-right:50px;
+	padding-top:5px;
+	padding-bottom:5px;
+	width:25%;
+}
+
+.width{width:20%;}
+
+#succes th{
+	text-align: left;
+}
+
+#succes img{width:55px;}
+
+#succes .none{
+	padding-right:0;
+}
+
+#tabs{margin-bottom:75px;}
