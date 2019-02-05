@@ -188,7 +188,7 @@ include 'php/connection.php';
 <div id="content">
 	<div class="objetTitle"><h4>Nom de L'objet</h4><p>Description</p></div>
 	<?php
-		$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 50');
+		$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 500');
 		while($objet = $select->fetch())
 		{
 			?><div class="objet"><div class="objetMin">
@@ -197,12 +197,30 @@ include 'php/connection.php';
 			</div>
 			<div class="objetExtand">
 					<?php
+					echo "<p>Prix: ".$objet['prix']." po.</p>";
 					if ($objet['typeInt'] == 3 || $objet['typeInt'] == 4 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6 || $objet['typeInt'] == 7)
 					{
-						echo "<p>Force requise: ".$objet['forceRequis']."</p>";
-						echo "<p>Dextérité requise: ".$objet['dextRequis']."</p>";
-						echo "<p>Constitution requise: ".$objet['constRequis']."</p>";
+						echo '<div class="objetPrerequis">';
+						echo "<h5>Prérequis:</h5>";
+						echo "<p>Level requis: ".$objet['niveauRequis'].".</p>";
+						echo "<p>Force requise: ".$objet['forceRequis'].".</p>";
+						echo "<p>Dextérité requise: ".$objet['dextRequis'].".</p>";
+						echo "<p>Constitution requise: ".$objet['constRequis'].".</p>";
+						echo "</div>";
+						echo '<div class="objetBonus">';
+						echo "<h5>Bonus:</h5>";
+						if ($objet['force'] != "0") {
+							echo "<p>Force bonus: ".$objet['force'].".</p>";
+						}
+						if ($objet['dext'] != "0") {
+							echo "<p>Dextérité bonus: ".$objet['dext'].".</p>";
+						}
+						if ($objet['const'] != "0") {
+							echo "<p>Constitution bonus: ".$objet['const'].".</p>";
+						}
+						echo "</div>";
 					}
+
 					?>
 			</div></div>
 			<?php

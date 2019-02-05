@@ -1036,6 +1036,8 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 			clear: none;
 		}	
 	}
+
+/*Liste équipements*/
 #objetMain {
 	width: 100%;
 	display: flex;
@@ -1093,7 +1095,40 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 
 .objetExtand {
 	display: none;
+	flex-direction: column;
 	width: 100%;
 	margin: 1%;
 	font-size: 1vw;
+}
+
+.objetPrerequis {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+.objetPrerequis p {
+	display: flex;
+	align-items: center;
+	border: 1px solid #333333;
+	box-shadow: 1px 1px 1px black;
+	border-radius: 3px;
+	padding: 5px;
+	margin: 1%;
+}
+
+.objetBonus {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;	
+}
+
+.objetBonus p {
+	display: flex;
+	align-items: center;
+	border: 1px solid #333333;
+	box-shadow: 1px 1px 1px black;
+	border-radius: 3px;
+	padding: 5px;
+	margin: 1%;
 }
