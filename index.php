@@ -181,14 +181,22 @@
 			<a href="index.php"><img src="images/logoSO.png" alt="Logo Slayers Online" title="Slayers Online" /></a>
 		</header>
 	</div>
+	<nav id="navObjet">
+		<ul>
+			<li id="listObject">Liste des objets</li>
+			<li id="hdv">Hôtel de vente</li>
+		</ul>
+	</nav>
 	<main id="objetMain">
+	<div id="recherche"><!-- <label for="rechercheObjet">Recherchez par noms: </label> -->
+	<input type="text" name="rechercheObjet" id="rechercheObjet" value="" placeholder="Recherche"></div>
+	<div class="objetTitle"><h4>Nom de L'objet</h4><p>Description</p></div>
 <?php
 include 'php/connection.php';
 ?>
-<div id="content">
-	<div class="objetTitle"><h4>Nom de L'objet</h4><p>Description</p></div>
+<div id="objetContent">
 	<?php
-		$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 500');
+		$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 700');
 		while($objet = $select->fetch())
 		{
 			?><div class="objet"><div class="objetMin">
