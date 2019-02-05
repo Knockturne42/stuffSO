@@ -1,32 +1,32 @@
-var obj = document.getElementsByClassName('objet');
-var rechercheObj = document.getElementById('rechercheObjet');
 var hdv = document.getElementById('hdv');
 var listObject = document.getElementById('listObject');
-
+var page = 'page=index';
 function eventObjetListe() {
+	var obj = document.getElementsByClassName('objet');
 	for (var i = obj.length - 1; i >= 0; i--) {
 		obj[i].addEventListener('click', function(e){
 			for (var i = obj.length - 1; i >= 0; i--) {
-				obj[i].lastChild.style.display = "none";
+				obj[i].children[1].style.display = "none";
 			}
-			e.target.parentNode.lastChild.style.display = "flex";
+			e.target.parentNode.children[1].style.display = "flex";
 		});
-		// obj[i].addEventListener('mouseout', function(e){
-		// 	e.target.parentNode.lastChild.style.display = "none";
-		// });
-	}	
+	}
 }
 
-rechercheObjet.addEventListener("input", function(){
-	var httpRequest = new XMLHttpRequest();
-	httpRequest.onreadystatechange = function (argument) {
-	if (httpRequest.readyState === 4)
-		document.getElementById('objetContent').innerHTML = httpRequest.responseText;
-	}
-	httpRequest.open('GET', './php/rechercheObjet.php?nom='+rechercheObjet.value, true);
-	httpRequest.send();
-	setTimeout(function(){eventObjetListe();} ,500);
-});
+function eventRecherche()
+{
+	var rechercheObj = document.getElementById('rechercheObjet');
+	rechercheObjet.addEventListener("input", function(){
+		var httpRequest = new XMLHttpRequest();
+		httpRequest.onreadystatechange = function (argument) {
+		if (httpRequest.readyState === 4)
+			document.getElementById('objetContent').innerHTML = httpRequest.responseText;
+		}
+		httpRequest.open('GET', './php/rechercheObjet.php?'+page+'&nom='+rechercheObjet.value, true);
+		httpRequest.send();
+		setTimeout(function(){eventObjetListe();} ,500);
+	});
+}
 
 hdv.addEventListener("click", function(){
 	var httpRequest = new XMLHttpRequest();
@@ -36,7 +36,7 @@ hdv.addEventListener("click", function(){
 	}
 	httpRequest.open('GET', './php/venteObjet.php?page=hdv', true);
 	httpRequest.send();
-	setTimeout(function(){eventObjetListe();} ,500);
+	setTimeout(function(){eventObjetListe(); page = 'page=hdv';} ,500);
 });
 
 listObject.addEventListener("click", function(){
@@ -47,7 +47,8 @@ listObject.addEventListener("click", function(){
 	}
 	httpRequest.open('GET', './php/listeObjet.php', true);
 	httpRequest.send();
-	setTimeout(function(){eventObjetListe();} ,500);
+	setTimeout(function(){eventObjetListe(); page = 'page=index';} ,500);
 });
 
 eventObjetListe();
+eventRecherche(page);

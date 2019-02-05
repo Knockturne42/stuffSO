@@ -1045,16 +1045,48 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	align-items: center;
 
 }
+
+#typeObjet {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#typeObjet ul{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	border: 1px solid #333333;
+	border-bottom: none;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+#typeObjet li {
+	padding: 0.5%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+#typeObjet li:hover {
+	transition-duration: 0.5s;
+	background-color: #9b6c3b;
+	color: white;
+}
+
 #objetContent {
 	margin: 2%;
-	width: 95%;
+	width: 100%;
 	height: 80%;
 	display: flex;
 	flex-wrap: wrap;
 }
 .objet:hover{
 	background-color: #9b6c3b;
-/*	border: 2px solid #9b6c3b;*/
 	color: white;
 }
 
@@ -1077,9 +1109,19 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	justify-content: space-between;
 }
 
-.objetMin h4, .objetMin p{
+.objetMin h4 {
 	margin: 1%;
 	font-size: 1vw;
+}
+
+.objetMin div {
+	width: 50%;
+	display: flex;
+}
+
+.objetMin div p {
+	width: 25%;
+	display: flex;
 }
 
 .objetTitle {
@@ -1089,12 +1131,21 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	color: white;
 	justify-content: space-between;
 	align-items: center;
-	margin: 1%;
+	margin: 0 1% 1% 1%;
 }
 
-.objetTitle h4, .objetTitle p{
+.objetTitle h4 {
 	margin: 1%;
 	font-size: 1vw;
+}
+
+.objetTitle div {
+	width: 50%;
+	display: flex;
+}
+
+.objetTitle div p {
+	width: 25%;
 }
 
 .objetExtand {
@@ -1105,29 +1156,13 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	font-size: 1vw;
 }
 
-.objetPrerequis {
+.objetStats {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;	
 }
 
-.objetPrerequis p {
-	display: flex;
-	align-items: center;
-	border: 1px solid #333333;
-	box-shadow: 1px 1px 1px black;
-	border-radius: 2px;
-	padding: 5px;
-	margin: 1%;
-}
-
-.objetBonus {
-	width: 100%;
-	display: flex;
-	flex-wrap: wrap;	
-}
-
-.objetBonus p {
+.objetStats p {
 	display: flex;
 	align-items: center;
 	border: 1px solid #333333;
@@ -1140,6 +1175,7 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 #recherche {
 	width: 100%;
 	display: flex;
+	justify-content: center;
 	margin: 1%;
 }
 
@@ -1155,7 +1191,6 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	font-size:2.5rem;
 	background-color: #333333;
 	background-attachment: fixed;
-	/*height: 50px;*/
 	color: white;
 	height: 50px;
 }
