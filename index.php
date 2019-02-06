@@ -38,7 +38,6 @@
 
 <body>
 	<div id="header">
-	// <p>test</p>
 			<nav id='cssmenu'>
 
 				<ul>
