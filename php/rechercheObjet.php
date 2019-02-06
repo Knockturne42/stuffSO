@@ -19,7 +19,20 @@ if (isset($_GET['nom'])) {
 		?><div class="objet">
 			<div class="objetMin">
 				<h4><?php echo $objet['nomObjet'];?></h4>
-				<p><?php echo $objet['explication'];?></p>
+				<?php
+					if ($_GET['page'] == 'hdv')
+					{ ?>
+						<div>
+							<p><?php echo $objet['prixUnitaire'];?></p>
+							<p><?php echo $objet['quantiteObjet'];?></p>
+							<p><?php echo intval($objet['prixUnitaire'])*intval($objet['quantiteObjet']);?></p>
+							<p><?php echo $objet['nomJoueur'];?></p>
+						</div> <?php
+					}
+					else {
+						echo "<p>".$objet['explication']."</p>";
+					}
+					?>
 			</div>
 			<div class="objetExtand">
 					<?php
@@ -64,12 +77,12 @@ if (isset($_GET['nom'])) {
 							echo "<p>Dégats maximum: ".$objet['attMax']."</p>";
 							echo "</div>";
 						}
-						// elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
-						// 	echo '<div class="objetStats">';
-						// 	echo "<h5>Défense: </h5>";
-						// 	echo "<p>".$objet['defense']."</p>";
-						// 	echo "</div>";
-						// }
+						elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
+							echo '<div class="objetStats">';
+							echo "<h5>Défense: </h5>";
+							echo "<p>".$objet['defense']."</p>";
+							echo "</div>";
+						}
 					}
 
 					?>

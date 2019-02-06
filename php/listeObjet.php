@@ -26,8 +26,10 @@
 			</div>
 			<div class="objetExtand">
 <?php
+	echo '<div class="objetStats">';
 	echo "<h5>Prix moyen: </h5>";
 	echo "<p>".$objet['prix']." po.</p>";
+	echo "</div>";
 	if ($objet['typeInt'] == 3 || $objet['typeInt'] == 4 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6 || $objet['typeInt'] == 7)
 	{
 		echo '<div class="objetStats">';
@@ -62,12 +64,12 @@
 			echo "<p>Dégats maximum: ".$objet['attMax']."</p>";
 			echo "</div>";
 		}
-		// elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
-		// 					echo '<div class="objetStats">';
-		// 					echo "<h5>Défense: </h5>";
-		// 					echo "<p>".$objet['defense']."</p>";
-		// 					echo "</div>";
-		// 				}
+		elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
+			echo '<div class="objetStats">';
+			echo "<h5>Défense: </h5>";
+			echo "<p>".$objet['defense']."</p>";
+			echo "</div>";
+		}
 	}
 ?>
 		</div>

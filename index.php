@@ -263,12 +263,12 @@ include 'php/connection.php';
 							echo "<p>Dégats maximum: ".$objet['attMax']."</p>";
 							echo "</div>";
 						}
-						// elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
-						// 	echo '<div class="objetStats">';
-						// 	echo "<h5>Défense: </h5>";
-						// 	echo "<p>".$objet['defense']."</p>";
-						// 	echo "</div>";
-						// }
+						elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
+							echo '<div class="objetStats">';
+							echo "<h5>Défense: </h5>";
+							echo "<p>".$objet['defense']."</p>";
+							echo "</div>";
+						}
 					}
 
 					?>

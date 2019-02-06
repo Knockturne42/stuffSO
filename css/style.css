@@ -1070,6 +1070,7 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	font-weight: 700;
 }
 
 #typeObjet li:hover {
@@ -1094,7 +1095,7 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	width: 100%;
 	background-color: white;
 	border-radius: 3px;
-	border: 2px solid #333333;
+	border: 1px solid #333333;
 	box-shadow: 1px 2px 2px;
 	color: #333333;
 	margin-bottom: 1%;
@@ -1112,6 +1113,14 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 .objetMin h4 {
 	margin: 1%;
 	font-size: 1vw;
+	display: flex;
+	align-items: center;
+}
+
+.objetMin p {
+	margin-right: 1%;
+	display: flex;
+	align-items: center;
 }
 
 .objetMin div {
@@ -1132,11 +1141,20 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 	justify-content: space-between;
 	align-items: center;
 	margin: 0 1% 1% 1%;
+	box-shadow: 1px 2px 2px black;
 }
 
 .objetTitle h4 {
-	margin: 1%;
+	margin-left: 1%;
 	font-size: 1vw;
+	display: flex;
+	align-items: center;
+}
+
+.objetTitle p {
+	margin-right: 1%;
+	display: flex;
+	align-items: center;
 }
 
 .objetTitle div {

@@ -11,10 +11,10 @@
 	<div class="objetTitle">
 		<h4>Nom de L'objet</h4>
 		<div>
-			<p>prix unitaire</p>
-			<p>quantite</p>
-			<p>prix total</p>
-			<p>vendeur</p>
+			<p>Prix unitaire</p>
+			<p>Quantité</p>
+			<p>Prix total</p>
+			<p>Vendeur</p>
 		</div>
 	</div>
 
@@ -76,12 +76,12 @@ if (isset($_GET['page']) && $_GET['page'] == 'hdv') {
 			echo "<p>Dégats maximum: ".$objet['attMax']."</p>";
 			echo "</div>";
 		}
-		// elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
-		// 					echo '<div class="objetStats">';
-		// 					echo "<h5>Défense: </h5>";
-		// 					echo "<p>".$objet['defense']."</p>";
-		// 					echo "</div>";
-		// 				}
+		elseif ($objet['typeInt'] == 3 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6) {
+			echo '<div class="objetStats">';
+			echo "<h5>Défense: </h5>";
+			echo "<p>".$objet['defense']."</p>";
+			echo "</div>";
+		}
 	}
 ?>
 		</div>
