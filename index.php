@@ -198,13 +198,22 @@
 	</div>
 	<main id="objetMain">
 		<div id="typeObjet">
-			<ul>
-				<li>Tous</li>
-				<li>Equipement</li>
-				<li>Projectiles</li>
-				<li>Gemmes</li>
-				<li>Ressources Metier</li>
-				<li>Autres</li>
+			<ul id="typeListe">
+				<li class="listeType" value="999">Tous</li>
+				<li class="listeType" value="1000" id="equipementLi">Equipement<ul id="equipementsListe">
+					<li class="stuffChoice" value="4">Epées 1 main</li>
+					<li class="stuffChoice" value="7">Epées 2 mains</li>
+					<li class="stuffChoice" value="3">Boucliers</li>
+					<li class="stuffChoice" value="6">Casques</li>
+					<li class="stuffChoice" value="5">Armures</li>
+					<li class="stuffChoice" value="8">Set complet</li>
+					<li class="stuffChoice" value="9">Outils de récolte</li>
+				</ul></li>
+				<li class="listeType" value="2">Projectiles</li>
+				<li class="listeType" value="11">Gemmes</li>
+				<li class="listeType" value="10">Ressources Metier</li>
+				<li class="listeType" value="1">Consommables</li>
+				<li class="listeType" value="0">Autres</li>
 			</ul>
 		</div>
 		<div class="objetTitle"><h4>Nom de L'objet</h4><p>Description</p></div>

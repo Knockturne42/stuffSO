@@ -1,19 +1,32 @@
 <?php
 include 'connection.php';
 if (isset($_GET['nom'])) {
+	$requete = 'SELECT * FROM ';
 	if ($_GET['page'] == 'hdv') {
+		$requete .= 'venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE ';
 		if ($_GET['nom'] == '')
-			$select = $bdd->query('SELECT * FROM venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE 1 LIMIT 0, 700');
+			$requete .= '1 AND ';
 		else
-			$select = $bdd->query('SELECT * FROM venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE nomObjet LIKE "%'.$_GET['nom'].'%" LIMIT 0, 700');
+			$requete .= 'nomObjet LIKE "%'.$_GET['nom'].'%" AND ';
 	}
 	else
 	{
 		if ($_GET['nom'] == '')
-			$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 700');
+			$requete .= 'objets WHERE 1 AND ';
 		else
-			$select = $bdd->query('SELECT * FROM objets WHERE nomObjet LIKE "%'.$_GET['nom'].'%" LIMIT 0, 700');
+			$requete .= 'objets WHERE nomObjet LIKE "%'.$_GET['nom'].'%" AND ';
 	}
+	if ($_GET['filtre'] != '' && $_GET['filtre'] != '999')
+	{
+		if ($_GET['filtre'] == '1000') {
+			$requete .= 'typeInt BETWEEN 3 AND 9 LIMIT 0, 700';
+		}
+		else
+			$requete .= 'typeInt LIKE "'.$_GET['filtre'].'" LIMIT 0, 700';
+	}
+	else
+		$requete .= '1 LIMIT 0, 700';
+	$select = $bdd->query($requete);
 	while($objet = $select->fetch())
 	{
 		?><div class="objet">
@@ -23,9 +36,9 @@ if (isset($_GET['nom'])) {
 					if ($_GET['page'] == 'hdv')
 					{ ?>
 						<div>
-							<p><?php echo $objet['prixUnitaire'];?></p>
+							<p><?php echo $objet['prixUnitaire'];?>po</p>
 							<p><?php echo $objet['quantiteObjet'];?></p>
-							<p><?php echo intval($objet['prixUnitaire'])*intval($objet['quantiteObjet']);?></p>
+							<p><?php echo intval($objet['prixUnitaire'])*intval($objet['quantiteObjet']);?>po</p>
 							<p><?php echo $objet['nomJoueur'];?></p>
 						</div> <?php
 					}
