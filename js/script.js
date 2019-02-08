@@ -1,6 +1,7 @@
 var hdv = document.getElementById('hdv');
 var listObject = document.getElementById('listObject');
 var page = 'page=index';
+var filtre = '';
 
 function setClickChoiceEquipement() {
 	var stuffChoice = document.getElementsByClassName('stuffChoice');
@@ -96,7 +97,6 @@ listObject.addEventListener("click", function(){
 
 
 function initChange() {
-	var filtre = '';
 	eventObjetListe();
 	eventRecherche();
 	eventRechercheFiltre();

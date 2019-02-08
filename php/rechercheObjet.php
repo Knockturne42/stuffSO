@@ -27,8 +27,10 @@ if (isset($_GET['nom'])) {
 	else
 		$requete .= '1 LIMIT 0, 700';
 	$select = $bdd->query($requete);
+	$i = 0;
 	while($objet = $select->fetch())
 	{
+		$i++;
 		?><div class="objet">
 			<div class="objetMin">
 				<h4><?php echo $objet['nomObjet'];?></h4>
@@ -99,7 +101,10 @@ if (isset($_GET['nom'])) {
 					}
 
 					?>
-			</div></div><?php
-}
-}
+				</div>
+			</div><?php
+		}
+		if ($i == 0 )
+			echo "<p>pas de résultats trouvés<p>";
+	}
 ?>

@@ -223,8 +223,10 @@ include 'php/connection.php';
 <div id="objetContent">
 	<?php
 		$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 700');
+		$i = 0;
 		while($objet = $select->fetch())
 		{
+			$i++;
 			?><div class="objet"><div class="objetMin">
 				<h4><?php echo $objet['nomObjet'];?></h4>
 				<p><?php echo $objet['explication'];?></p>
@@ -283,6 +285,8 @@ include 'php/connection.php';
 					?>
 			</div></div>
 			<?php
+			if ($i == 0 )
+				echo "<p>pas de résultats trouvés<p>";
 		}
 	?>
 	<div id="exemple"></div>
