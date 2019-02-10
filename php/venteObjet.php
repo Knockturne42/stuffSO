@@ -31,7 +31,7 @@
 <?php
 include 'connection.php';
 if (isset($_GET['page']) && $_GET['page'] == 'hdv') {
-	$select = $bdd->query('SELECT * FROM venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE 1 LIMIT 0, 700');
+	$select = $bdd->query('SELECT * FROM venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE objets.ig LIKE "1" LIMIT 0, 700');
 	$i = 0;
 	while($objet = $select->fetch())
 	{
@@ -49,10 +49,13 @@ if (isset($_GET['page']) && $_GET['page'] == 'hdv') {
 			</div>
 			<div class="objetExtand">
 <?php
-			echo '<div class="objetStats">';
-			echo "<h5>Prix moyen: </h5>";
-			echo "<p>".$objet['prix']." po</p>";
-			echo "</div>";
+			if($objet['rarete'] == 'COMMUN')
+			{
+				echo '<div class="objetStats">';
+				echo "<h5>Prix pnj: </h5>";
+				echo "<p>".$objet['prix']." po</p>";
+				echo "</div>";
+			}
 			if ($objet['typeInt'] == 3 || $objet['typeInt'] == 4 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6 || $objet['typeInt'] == 7)
 			{
 				echo '<div class="objetStats">';

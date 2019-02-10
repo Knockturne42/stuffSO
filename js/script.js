@@ -3,6 +3,27 @@ var listObject = document.getElementById('listObject');
 var page = 'page=index';
 var filtre = '';
 
+
+function initAchatLink()
+{
+	var achatLink = document.getElementsByClassName('achatLink');
+	for (var i = 0; i < achatLink.length; i++) {
+		achatLink[i].addEventListener('click', function(e){
+			var httpRequest = new XMLHttpRequest();
+			httpRequest.onreadystatechange = function (argument) {
+			if (httpRequest.readyState === 4)
+				document.getElementById('objetContent').innerHTML = httpRequest.responseText;
+			}
+			page = 'page=hdv';
+			httpRequest.open('GET', './php/rechercheObjet.php?'+page+'&nom='+e.target.parentNode.parentNode.children[0].children[0].innerHTML+'&filtre=', true);
+			httpRequest.send();
+			filtre = e.target.value;
+			setTimeout(function(){initChange();} ,500);
+			console.log(e.target.parentNode.parentNode.children[0].children[0].innerHTML);
+		});
+	}
+}
+
 function setClickChoiceEquipement() {
 	var stuffChoice = document.getElementsByClassName('stuffChoice');
 	var listDisplay = document.getElementById('equipementsListe');
@@ -102,6 +123,7 @@ function initChange() {
 	eventRechercheFiltre();
 	choiceEquipement();
 	setClickChoiceEquipement();
+	initAchatLink();
 }
 
 initChange();

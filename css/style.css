@@ -1271,3 +1271,20 @@ table.mceLayout, textarea.richEditor {margin:auto !important;}
 {
 	background-color: #333333;
 }
+
+.achatLink {
+	margin: auto;
+	height: 40px;
+	width: 10%;
+	border-radius: 3px;
+	background-color: red;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	color: #9b6c3b;
+}
+.achatLink:hover{
+	background-color: #333333;
+	color: white;
+}

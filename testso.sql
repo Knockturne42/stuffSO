@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 08 fév. 2019 à 20:51
+-- Généré le :  Dim 10 fév. 2019 à 18:50
 -- Version du serveur :  5.7.23
 -- Version de PHP :  7.2.10
 
@@ -72,8 +72,8 @@ CREATE TABLE IF NOT EXISTS `objets` (
   `typeInt` int(2) DEFAULT NULL,
   `utilisablePar` int(1) DEFAULT NULL,
   `sortAssocie` int(1) DEFAULT NULL,
-  ` rarete` varchar(9) DEFAULT NULL,
-  ` ig` int(1) DEFAULT NULL,
+  `rarete` varchar(9) DEFAULT NULL,
+  `ig` int(1) DEFAULT NULL,
   PRIMARY KEY (`idObjet`)
 ) ENGINE=MyISAM AUTO_INCREMENT=664 DEFAULT CHARSET=utf8;
 
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `objets` (
 -- Déchargement des données de la table `objets`
 --
 
-INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication`, `prix`, `force`, `dext`, `const`, `nivMagique`, `attMin`, `attMax`, `defense`, `pointVie`, `pointMagie`, `forceRequis`, `dextRequis`, `constRequis`, `magieRequis`, `niveauRequis`, `typeInt`, `utilisablePar`, `sortAssocie`, ` rarete`, ` ig`) VALUES
+INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication`, `prix`, `force`, `dext`, `const`, `nivMagique`, `attMin`, `attMax`, `defense`, `pointVie`, `pointMagie`, `forceRequis`, `dextRequis`, `constRequis`, `magieRequis`, `niveauRequis`, `typeInt`, `utilisablePar`, `sortAssocie`, `rarete`, `ig`) VALUES
 (1, 'Petit herbe de guérison', '0', 0, 'Redonne 200 PV', 10, 0, 0, 0, 0, 0, 0, 0, 200, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'COMMUN', 1),
 (2, 'Dague', '0', 0, ' ', 4, 0, 0, 0, 0, 30, 90, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 'COMMUN', 1),
 (3, 'Petit bouclier en bois', '0', 0, 'Defense de 10', 44, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 3, 3, 0, 0, 'COMMUN', 1),
@@ -443,8 +443,8 @@ INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication
 (359, 'Foulard de Karasa', '0', 0, 'Foulard porté par les habitants de Karasa +1 Dext', 1000000, 0, 1, 0, 0, 0, 0, 185, 0, 0, 0, 0, 30, 0, 20, 6, 0, 0, 'SEMI-RARE', 1),
 (360, 'Fiole de résistance', 'CONSOMMABLE_POTIONS', 1, 'Potion qui renforce votre défense', 25000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 1, 0, 0, 'RARE', 0),
 (361, 'Fiole de résistance +', 'CONSOMMABLE_POTIONS', 1, 'Potion qui renforce votre défense.', 100000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 1, 0, 0, 'RARE', 0),
-(362, 'Flèche aveuglante', 'CONSOMMABLE_PROJECTILES', 1, 'Flèche qui aveugle votre cible', 25000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 1, 0, 0, 'RARE', 1),
-(363, 'Flèche aveuglante +', 'CONSOMMABLE_PROJECTILES', 1, 'Flèche qui aveugle votre cible', 100000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 1, 0, 0, 'RARE', 1),
+(362, 'Flèche aveuglante', 'CONSOMMABLE_PROJECTILES', 1, 'Flèche qui aveugle votre cible', 25000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 2, 0, 0, 'RARE', 1),
+(363, 'Flèche aveuglante +', 'CONSOMMABLE_PROJECTILES', 1, 'Flèche qui aveugle votre cible', 100000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 50, 2, 0, 0, 'RARE', 1),
 (364, 'Epée à 2 mains Sarosa', '0', 0, 'Arme du tavernier', 1000, 1, 1, 0, 0, 250, 400, 0, 0, 0, 22, 0, 0, 0, 9, 7, 0, 0, 'SEMI-RARE', 1),
 (365, 'Oeuf d\'or', 'CONSOMMABLE_TRESORS', 1, 'Un magnifique oeuf en or !', 50000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 'RARE', 1),
 (366, 'Roche', 'BRUT', 0, 'Ressource brute. Peut se vendre dans les boutiques', 1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 'COMMUN', 1),
@@ -462,7 +462,7 @@ INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication
 (378, 'Set complet Dusk', '0', 0, 'Set regroupant tous le Dusk', 221824, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1),
 (379, 'Set complet Revenge', '0', 0, 'Set regroupant tous le Revenge', 344152, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1),
 (380, 'Set complet Havoc', '0', 0, 'Set regroupant tous le Havoc', 441768, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1);
-INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication`, `prix`, `force`, `dext`, `const`, `nivMagique`, `attMin`, `attMax`, `defense`, `pointVie`, `pointMagie`, `forceRequis`, `dextRequis`, `constRequis`, `magieRequis`, `niveauRequis`, `typeInt`, `utilisablePar`, `sortAssocie`, ` rarete`, ` ig`) VALUES
+INSERT INTO `objets` (`idObjet`, `nomObjet`, ` type`, ` stockable`, `explication`, `prix`, `force`, `dext`, `const`, `nivMagique`, `attMin`, `attMax`, `defense`, `pointVie`, `pointMagie`, `forceRequis`, `dextRequis`, `constRequis`, `magieRequis`, `niveauRequis`, `typeInt`, `utilisablePar`, `sortAssocie`, `rarete`, `ig`) VALUES
 (381, 'Set complet Valor', '0', 0, 'Set regroupant tous le Valor', 616745, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1),
 (382, 'Set complet Tears', '0', 0, 'Set regroupant tous le Tears', 773391, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1),
 (383, 'Set complet Spawn', '0', 0, 'Set regroupant tous le Spawn', 1008795, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 'COMMUN', 1),

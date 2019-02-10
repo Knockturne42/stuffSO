@@ -24,7 +24,7 @@
 	<div id="objetContent">
 <?php
 	include 'connection.php';
-	$select = $bdd->query('SELECT * FROM objets WHERE 1 LIMIT 0, 700');
+	$select = $bdd->query('SELECT * FROM objets WHERE ig LIKE "1" LIMIT 0, 700');
 	$i = 0;
 	while($objet = $select->fetch())
 	{
@@ -37,10 +37,13 @@
 			</div>
 			<div class="objetExtand">
 <?php
-			echo '<div class="objetStats">';
-			echo "<h5>Prix moyen: </h5>";
-			echo "<p>".$objet['prix']." po.</p>";
-			echo "</div>";
+			if($objet['rarete'] == 'COMMUN')
+			{
+				echo '<div class="objetStats">';
+				echo "<h5>Prix pnj: </h5>";
+				echo "<p>".$objet['prix']." po</p>";
+				echo "</div>";
+			}
 			if ($objet['typeInt'] == 3 || $objet['typeInt'] == 4 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6 || $objet['typeInt'] == 7)
 			{
 				echo '<div class="objetStats">';
@@ -83,6 +86,7 @@
 				}
 			}
 ?>
+			<div class="achatLink">acheter</div>
 		</div>
 	</div>
 <?php

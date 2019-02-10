@@ -5,16 +5,16 @@ if (isset($_GET['nom'])) {
 	if ($_GET['page'] == 'hdv') {
 		$requete .= 'venteobjet LEFT JOIN objets ON venteobjet.idObjet = objets.idObjet LEFT JOIN joueur ON venteobjet.idJoueur = joueur.idJoueur WHERE ';
 		if ($_GET['nom'] == '')
-			$requete .= '1 AND ';
+			$requete .= 'objets.ig LIKE "1" AND ';
 		else
-			$requete .= 'nomObjet LIKE "%'.$_GET['nom'].'%" AND ';
+			$requete .= 'nomObjet LIKE "%'.$_GET['nom'].'%" AND objets.ig LIKE "1" AND ';
 	}
 	else
 	{
 		if ($_GET['nom'] == '')
-			$requete .= 'objets WHERE 1 AND ';
+			$requete .= 'objets WHERE objets.ig LIKE "1" AND ';
 		else
-			$requete .= 'objets WHERE nomObjet LIKE "%'.$_GET['nom'].'%" AND ';
+			$requete .= 'objets WHERE nomObjet LIKE "%'.$_GET['nom'].'%" AND objets.ig LIKE "1" AND ';
 	}
 	if ($_GET['filtre'] != '' && $_GET['filtre'] != '999')
 	{
@@ -51,10 +51,13 @@ if (isset($_GET['nom'])) {
 			</div>
 			<div class="objetExtand">
 					<?php
-					echo '<div class="objetStats">';
-					echo "<h5>Prix moyen: </h5>";
-					echo "<p>".$objet['prix']." po</p>";
-					echo "</div>";
+					if($objet['rarete'] == 'COMMUN')
+					{
+						echo '<div class="objetStats">';
+						echo "<h5>Prix pnj: </h5>";
+						echo "<p>".$objet['prix']." po</p>";
+						echo "</div>";
+					}
 					if ($objet['typeInt'] == 3 || $objet['typeInt'] == 4 || $objet['typeInt'] == 5 || $objet['typeInt'] == 6 || $objet['typeInt'] == 7)
 					{
 						echo '<div class="objetStats">';
@@ -99,7 +102,9 @@ if (isset($_GET['nom'])) {
 							echo "</div>";
 						}
 					}
-
+					if ($_GET['page'] != 'hdv') {
+						echo '<div class="achatLink">acheter</div>';
+					}
 					?>
 				</div>
 			</div><?php
